@@ -21,5 +21,6 @@ The exact dimensions of the matrix (the plastic frame, and the mounting screw ho
 * Holes on the top for TSL2561/TSL2591 
 * Holes on the back for mounting two types of 230V-to-5V AC/DC power supplies
 * Holes on the back, top and bottom for mounting pot-type magnets for attaching it to metal supports
+* Holes on the back for mounting a buzzer module
 * Fits perfectly into an Ikea BOTKYRKA metal shelf (and since the shelf is made of metal, you can use the magnets to hold it securely)
 
