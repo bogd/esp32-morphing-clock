@@ -11,3 +11,12 @@ As per my fab requirements, the red lines are for cutting, and the green lines a
 *IMPORTANT!*
 The exact dimensions of the matrix (the plastic frame, and the mounting screw holes) may vary - even for the same product, from the same vendor! Whenever possible, ask your matrix vendor for the technical drawings of the particular model you bought, and use the dimensions from those drawings to adjust the design!!
 
+## Features
+
+* Holes for routing a 110V/230V power cable from the side
+* Cable holders for securely mounting the power cable to the side of the case (the small rectangular things with two screw holes each)
+* Holes on the sides for panel-mount switches, push-buttons, and TSL2591 and TSL2561 light sensors
+* Holes on the top for TSL2561/TSL2591 
+* Holes on the back for mounting two types of 230V-to-5V AC/DC power supplies
+* Holes on the back, top and bottom for mounting pot-type magnets for attaching it to metal supports
+* Fits perfectly into an Ikea BOTKYRKA metal shelf (and since the shelf is made of metal, you can use the magnets to hold it securely)
