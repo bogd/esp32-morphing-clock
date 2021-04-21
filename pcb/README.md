@@ -14,7 +14,9 @@ Features:
 ## Board 
 
 TODO - still waiting for the finished boards...
+
 In the meantime, this is the image generated from the gerbers:
+
 ![Photo](photos/gerber-front.png)
 
 ## Schematic
