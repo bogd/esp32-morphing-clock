@@ -1,0 +1,5 @@
+creds*
+!creds*.sample
+Panel1-JXS-P2.5*
+.pio
+.vscode
