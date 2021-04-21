@@ -2,7 +2,7 @@
 
 ## Info
 
-*WARNING!!* This has *not* been tested yet! 
+**WARNING!!** This has **not** been tested yet! 
 I am still waiting for the finished boards to arrive, so I have not yet had the chance to test that the PCBs function properly. This is very early work (notice the "0.1" version) - use it at your own risk!
 
 Features:
