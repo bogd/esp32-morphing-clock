@@ -3,7 +3,7 @@ ESP32 HUB75 Matrix Morphing Clock
 
 I am working on building a clock based on a HUB75 RGB LED matrix, controlled by an ESP32.
 
-
+![Animation](photos/animation1.gif)
 
 So far, it does the following:
 * Displays the current date, time, and day of the week
