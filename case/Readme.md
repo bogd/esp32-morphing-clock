@@ -10,9 +10,7 @@ All the dimensions in the file are in mm, and the model has already been placed 
 
 As per my fab requirements, the red lines are for cutting, and the green lines are for line engraving. Everything else in the file is ignored.
 
-**IMPORTANT!**
-
-The exact dimensions of the matrix (the plastic frame, and the mounting screw holes) may vary - even for the same product, from the same vendor! Whenever possible, ask your matrix vendor for the technical drawings of the particular model you bought, and use the dimensions from those drawings to adjust the design!!
+**IMPORTANT!** The exact dimensions of the matrix (the plastic frame, and the mounting screw holes) may vary - even for the same product, from the same vendor! Whenever possible, ask your matrix vendor for the technical drawings of the particular model you bought, and use the dimensions from those drawings to adjust the design!!
 
 ## Features
 
