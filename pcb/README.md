@@ -10,3 +10,6 @@ Features:
 * Mounting holes for securing the shield to the enclosure
 * Options for both PTH and SMD (0805) parts for resistors and capacitors
 * Multiple JST-XH (2.54mm) connectors for I2C sensors and for GPIOs (use for push-buttons, for example)
+
+Schematic:
+![Schematic](photos/schematic.png)

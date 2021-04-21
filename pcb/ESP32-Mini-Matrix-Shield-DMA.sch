@@ -7202,11 +7202,11 @@ have E line on pin 16</text>
 <attribute name="NAME" x="55.88" y="144.018" size="1.524" layer="95"/>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
-<attribute name="DRAWING_NAME" x="217.17" y="15.24" size="2.54" layer="94"/>
+<attribute name="DRAWING_NAME" x="217.17" y="15.24" size="1.778" layer="94"/>
 <attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94"/>
 </instance>
-<instance part="ST_01" gate="G$1" x="246.38" y="30.48" smashed="yes"/>
+<instance part="ST_01" gate="G$1" x="231.14" y="30.48" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -7325,7 +7325,7 @@ have E line on pin 16</text>
 <segment>
 <pinref part="ST_01" gate="G$1" pin="P$2"/>
 <label x="213.36" y="35.56" size="1.778" layer="95"/>
-<wire x1="246.38" y1="35.56" x2="213.36" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="35.56" x2="213.36" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="R2" class="0">
@@ -7704,7 +7704,7 @@ have E line on pin 16</text>
 <segment>
 <pinref part="ST_01" gate="G$1" pin="P$1"/>
 <label x="213.36" y="38.1" size="1.778" layer="95"/>
-<wire x1="246.38" y1="38.1" x2="213.36" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="38.1" x2="213.36" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="IO33" class="0">
