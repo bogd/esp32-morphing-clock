@@ -11,5 +11,12 @@ Features:
 * Options for both PTH and SMD (0805) parts for resistors and capacitors
 * Multiple JST-XH (2.54mm) connectors for I2C sensors and for GPIOs (use for push-buttons, for example)
 
-Schematic:
+## Board 
+
+TODO - still waiting for the finished boards...
+In the meantime, this is the image generated from the gerbers:
+![Photo](photos/gerber-front.png)
+
+## Schematic
+
 ![Schematic](photos/schematic.png)
