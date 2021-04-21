@@ -18,7 +18,7 @@ This is very much a work in progress, and it is far from being finished. Things 
 There is still some cleanup I need to do (and lots of READMEs/instructions to write), but over the following weeks I will be posting:
 * The full source code
 * The schematics for the PCB used
-* The drawings for the lasercut plexiglass enclosure
+* The drawings for the lasercut plexiglass enclosure (already up, check it out [here](case/)! )
 
 ## Thanks
 
