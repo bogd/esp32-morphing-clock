@@ -25,6 +25,7 @@ There is still some cleanup I need to do (and lots of READMEs/instructions to wr
 ## Thanks
 
 This project would not have been possible without the work of many others, who have been gracious enough to open source their work. Some of the things that I have used when building this:
+* The PxMatrix library from [2dom](https://github.com/2dom/PxMatrix). Even though this is NOT used in this project (I switched to the DMA library below, for performance reasons), it is the library that got me started on working with HUB75 matrices.
 * The ESP32 DMA library for controlling the matrix, from [mrfaptastic](https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-I2S-DMA)
 * The morphing clock code from [HariFun](https://www.instructables.com/Morphing-Digital-Clock/) (modified to work with mrfaptastic's library instead of pxmatrix)
 * The shield schematics from [hallard](https://github.com/hallard/WeMos-Matrix-Shield-DMA), which gave me the confidence to try building my own version of a shield PCB :)
