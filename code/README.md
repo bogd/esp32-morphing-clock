@@ -2,7 +2,7 @@
 
 ## Info
 
-This is the code for my morphing clock project. See (the main Readme file)[../] for features that are already implemented or still work-in-progress.
+This is the code for my morphing clock project. See [the main Readme file](../) for features that are already implemented or still work-in-progress.
 
 ## Before You Start
 
