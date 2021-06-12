@@ -10,6 +10,7 @@ So far, it does the following:
 * Updates the time on startup and periodically, via NTP
 * Displays the current outdoor temperature and humidity (received via MQTT - if you want to use this, you will need an MQTT server and a separate temperature sensor publishing to it!)
 * Displays the current light levels, read via a TSL2591 I2C light sensor
+* Can receive OTA updates, triggered via an MQTT message (of course, this also requires an MQTT server :) )
 
 This is very much a work in progress, and it is far from being finished. Things that are planned for the future include:
 * Using the current light levels to control the matrix brightness
