@@ -24,6 +24,8 @@ These are the components that you will need to populate the PCB:
 * power connection - 2.1/5.5mm PCB connector, or **7.62mm** screw terminal block
 * I2C and GPIO connectors - JST-XH 2.54mm, 2 and 4-pin 
 
+And, of course, you will need the ESP32 board - it has to be the D1 Mini version:
+![ESP32 D1 Mini](photos/esp32-d1-mini.png)
 
 ## Board 
 
