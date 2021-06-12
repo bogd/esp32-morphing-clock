@@ -17,10 +17,10 @@ This is very much a work in progress, and it is far from being finished. Things 
 * Display alerts on-screen (received via MQTT)
 * Add a buzzer module and use it to get the user's attention when an alert comes in
 
-There is still some cleanup I need to do (and lots of READMEs/instructions to write), but over the following weeks I will be posting:
-* The full source code
-* The schematics for the PCB used (already up, check it out [here](pcb/)! )
-* The drawings for the lasercut plexiglass enclosure (already up, check it out [here](case/)! )
+You can find the "components" for the project here:
+* The full source code is [here](code/)  - requires PlatformIO!
+* The schematics for the PCB used is [here](pcb/)
+* The drawings for the lasercut plexiglass enclosure are [here](case/)
 
 
 ## Thanks

@@ -1,0 +1,30 @@
+#ifndef CREDS_MQTT_H
+#define CREDS_MQTT_H
+
+//#include <ESP8266WiFi.h>
+
+//  Home
+#define WIFI_SSID "MYSSID"
+#define WIFI_PASSWORD "MYWiFiPASS"
+
+#define MQTT_SERVER "name.or.ip.addr"
+#define MQTT_USERNAME "user"
+#define MQTT_PASSWORD "pass"
+
+
+#define MQTT_HOSTNAME "esp-hostname"
+
+#define MQTT_PORT 1883
+#define MQTT_TEMPERATURE_SENSOR_TOPIC "sensor/temperature/topic"
+#define MQTT_HUMIDITY_SENSOR_TOPIC "sensor/humidity/topic"
+#define MQTT_UPDATE_CMD_TOPIC "update/" MQTT_HOSTNAME "/req"
+
+#define MQTT_CLIENT_ID MQTT_HOSTNAME
+
+#define MQTT_REPORT_INTERVAL_MILLIS 30000
+
+#define NTP_SERVER "ro.pool.ntp.org"
+
+#define OTA_URL "http://10.10.10.10:8080/" MQTT_HOSTNAME ".bin"
+
+#endif

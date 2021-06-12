@@ -1,0 +1,7 @@
+MQTT_HOST="host.or.ip.addr"
+MQTT_USER="username"
+MQTT_PASS="password"
+MQTT_TOPIC="topic/for/update/request"
+MQTT_PAYLOAD="1"
+MQTT_ESP_HOSTNAME="my-esp-name"
+WAIT_TIME_SEC=30
