@@ -22,6 +22,7 @@ There is still some cleanup I need to do (and lots of READMEs/instructions to wr
 * The schematics for the PCB used (already up, check it out [here](pcb/)! )
 * The drawings for the lasercut plexiglass enclosure (already up, check it out [here](case/)! )
 
+
 ## Thanks
 
 This project would not have been possible without the work of many others, who have been gracious enough to open source their work. Some of the things that I have used when building this:
@@ -32,4 +33,6 @@ This project would not have been possible without the work of many others, who h
 
 I also have to mention here [Brian Lough's work](https://www.tindie.com/products/brianlough/esp32-i2s-matrix-shield/) on a shield for the matrix. Even though he decided not to open source the board (he only sells the finished board on tindie), he has been extremely helpful during my initial work on the project. So if you are looking for a simple option for getting the full kit (shield and components, all in one package), take a look at [his tindie page](https://www.tindie.com/products/brianlough/esp32-matrix-shield-mini-32/) .
 
+## License
 
+The ESP32 HUB75 Matrix Morphing Clock is (c) Bogdan Sass, licensed with GNU General Public License Version 3.0 (which means, if you use it in a product somewhere, you need to make the source and all your modifications available to the receiver of such product so that they have the freedom to adapt and improve).

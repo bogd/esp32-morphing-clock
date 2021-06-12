@@ -1,0 +1,21 @@
+## New in v0.2
+
+* Added PTH option for the 5V protection diode (BAT85 or another Schottky will work)
+* Moved ESP module to the edge of the board, to get some additional clearance between the antenna and the ground plane
+* Added silkscreen documentation to both sides of the board
+* Rounded all the corners of the board (I had missed one in v0.1 :) )
+
+## New in v0.3
+
+* Increased size of silkscreen instructions (they were almost unreadable in previous versions)
+* Moved screw terminals closer to the edge of the board, to make connection easier
+* Corrected reversed OE and LS on the HUB75E connector
+* Increased width of 5V power trace for ESP32
+* Exposed debugging pins to dedicated header
+* Rotated 2.1/5.5mm power jack to make the board fit in the case with the jack connected
+* Added JTAG/PROG connectors for ESP32-prog programming and debugging
+
+## TODO in v0.4
+
+* Increase spacing around JTAG/PROG to allow for shrouded connectors
+* Change diode SMD footprint to make it easier to solder?
