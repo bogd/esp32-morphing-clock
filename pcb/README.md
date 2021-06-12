@@ -13,6 +13,18 @@ Features:
 
 v0.3 has been tested, and works reliably.
 
+## Components
+
+These are the components that you will need to populate the PCB:
+* R1, R2 (I2C pull-up resistors) - 4k7 ohm, PTH or 0805 SMD
+* C1,C2,C3 (decoupling capacitor(s)) - either 100uF PTH, or 2x47uF SMD
+* D1 (protection diode, prevents the matrix from pulling too much power from your USB port) - any Schottky will work. For example: BAT85 (PTH), or 1N5819 (SOD-323)
+* P1 - ribbon cable connector, 2x8 pin
+* GND_T/5V_T - 2xScrew terminal blocks, 5.0mm
+* power connection - 2.1/5.5mm PCB connector, or **7.62mm** screw terminal block
+* I2C and GPIO connectors - JST-XH 2.54mm, 2 and 4-pin 
+
+
 ## Board 
 
 Images of the completed board:
@@ -26,8 +38,6 @@ The board with (a minimum of) components soldered on:
 Connected to the matrix and the ESP32 module:
 ![Connected Front](photos/connected-front.jpg)
 ![Connected Back](photos/connected-back.jpg)
-
-
 
 ## Schematic
 
