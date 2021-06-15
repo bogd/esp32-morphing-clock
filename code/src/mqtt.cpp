@@ -43,7 +43,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
     // Start update if a 1 was received as first character
     if ((char)payload[0] == '1') {
       perform_update();
-    } 
+    }
   }
 }
 
@@ -63,11 +63,16 @@ void reconnect() {
     // Attempt to connect (clientId, username, password)
     if ( client.connect(MQTT_CLIENT_ID, MQTT_USERNAME, MQTT_PASSWORD) ) {
       Serial.println( "[DONE]" );
-      Serial.println("Subscribing to topics");
+      Serial.println("Subscribing to topics:");
       Serial.println(MQTT_UPDATE_CMD_TOPIC);
+      Serial.println(MQTT_TEMPERATURE_SENSOR_TOPIC);
+      Serial.println(MQTT_HUMIDITY_SENSOR_TOPIC);
+      Serial.println("... done");
+
       client.subscribe(MQTT_UPDATE_CMD_TOPIC);
       client.subscribe(MQTT_TEMPERATURE_SENSOR_TOPIC);
       client.subscribe(MQTT_HUMIDITY_SENSOR_TOPIC);
+      client.publish(MQTT_STATUS_TOPIC, "CONNECTED", true);
     } else {
       logStatusMessage("MQTT Fail, retrying...");
       Serial.print( "[FAILED] [ rc = " );

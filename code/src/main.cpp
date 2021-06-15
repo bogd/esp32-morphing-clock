@@ -1,4 +1,4 @@
-/* 
+/*
 ESP32 Matrix Clock - Copyright (C) 2021 Bogdan Sass
 
 This program is free software: you can redistribute it and/or modify
@@ -12,7 +12,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.   
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include <Ticker.h>
@@ -98,12 +98,17 @@ void setup(){
   logStatusMessage("NTP done!");
 
   logStatusMessage("MQTT connect...");
+  #ifdef MQTT_USE_SSL
+  wifiClient.setCACert(server_crt_str);
+  wifiClient.setCertificate(client_crt_str);
+  wifiClient.setPrivateKey(client_key_str);
+  #endif
   client.setServer( MQTT_SERVER, MQTT_PORT );
   client.setCallback(mqtt_callback);
   reconnect();
   lastStatusSend = 0;
   logStatusMessage("MQTT done!");
-  
+
   logStatusMessage("Initialize TSL...");
   tslConfigureSensor();
   logStatusMessage("TSL done!");
@@ -113,7 +118,7 @@ void setup(){
 
   displayTicker.attach_ms(30, displayUpdater);
 
-  buzzer_tone(1000, 300); 
+  buzzer_tone(1000, 300);
 }
 
 uint8_t wheelval = 0;
@@ -122,7 +127,7 @@ void loop() {
     logStatusMessage("WiFi lost!");
     WiFi.reconnect();
   }
-  
+
   if ( !client.connected() ) {
     logStatusMessage("MQTT lost");
     reconnect();
@@ -138,14 +143,14 @@ void loop() {
 
   if (digitalRead(BUTTON1_PIN) == LOW) {
     logStatusMessage("Yess... push it again!!");
-  } 
+  }
 
   //Do we need to clear the status message from the screen?
   if (logMessageActive) {
     if (millis() > messageDisplayMillis + LOG_MESSAGE_PERSISTENCE_MSEC) {
       clearStatusMessage();
       drawTestBitmap();
-    } 
+    }
   }
 
   // Do we have new sensor data?
@@ -166,7 +171,7 @@ void loop() {
   heartBeat = !heartBeat;
   drawHeartBeat();
 
-  delay(500); 
+  delay(500);
 }
 
 void displayUpdater() {
@@ -174,7 +179,7 @@ void displayUpdater() {
     logStatusMessage("Failed to get time!");
     return;
   }
- 
+
   unsigned long epoch = mktime(&timeinfo);
   if (epoch != prevEpoch) {
     displayClock();
@@ -193,5 +198,5 @@ void displayUpdater() {
 //TODO - replace bitmap arrays with color565 values!
 //TODO - add event-based wifi disconnect/reconnect - https://randomnerdtutorials.com/solved-reconnect-esp32-to-wifi/
 
-//TODO - check asynchronously for buzzer stop 
+//TODO - check asynchronously for buzzer stop
 //TODO - move TSL read to async task
