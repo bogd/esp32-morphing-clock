@@ -72,7 +72,6 @@ void reconnect() {
       client.subscribe(MQTT_UPDATE_CMD_TOPIC);
       client.subscribe(MQTT_TEMPERATURE_SENSOR_TOPIC);
       client.subscribe(MQTT_HUMIDITY_SENSOR_TOPIC);
-      client.publish(MQTT_STATUS_TOPIC, "CONNECTED", true);
     } else {
       logStatusMessage("MQTT Fail, retrying...");
       Serial.print( "[FAILED] [ rc = " );
