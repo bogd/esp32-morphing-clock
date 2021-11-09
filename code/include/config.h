@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#define MQTT_USE_SSL 1
+//#define USE_ANDROID_AP 1
+
 // How often we refresh the time from the NTP server
 #define NTP_REFRESH_INTERVAL_SEC 3600
 
@@ -55,7 +58,7 @@
 
 
 // Weather sensor data
-#define SENSOR_DATA_X 0 
+#define SENSOR_DATA_X 0
 #define SENSOR_DATA_Y 0
 #define SENSOR_DATA_WIDTH 128
 #define SENSOR_DATA_HEIGHT 8

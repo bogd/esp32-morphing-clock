@@ -3,7 +3,11 @@
 #include "mqtt.h"
 #include "rgb_display.h"
 
+#ifdef MQTT_USE_SSL
+WiFiClientSecure wifiClient;
+#else
 WiFiClient wifiClient;
+#endif
 int status = WL_IDLE_STATUS;
 
 // Initialize MQTT client

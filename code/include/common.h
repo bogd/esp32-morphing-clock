@@ -1,15 +1,21 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include <WiFi.h>
-#include <PubSubClient.h>
-#include <ESPNtpClient.h>
-
 #include "config.h"
 #include "rgb_display.h"
 #include "light_sensor.h"
 
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include <ESPNtpClient.h>
+
+#ifdef MQTT_USE_SSL
+#include <HTTPClient.h>
+extern WiFiClientSecure wifiClient;
+#else
 extern WiFiClient wifiClient;
+#endif
+
 extern int status;
 
 // Initialize MQTT client

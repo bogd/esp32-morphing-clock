@@ -2,3 +2,7 @@
 .vscode
 creds*
 !creds*.sample
+include/client.crt.h
+include/client.key.h
+include/server_mqtt.crt.h
+
