@@ -23,6 +23,11 @@ You can find the "components" for the project here:
 * The schematics for the PCB used is [here](pcb/)
 * The drawings for the lasercut plexiglass enclosure are [here](case/)
 
+## Changelog
+
+### Version 0.2
+* Added MQTT SSL support (thanks to [Andreas](https://github.com/lefty01)). Disabled by default, since I do not use it when testing
+
 
 ## Thanks
 

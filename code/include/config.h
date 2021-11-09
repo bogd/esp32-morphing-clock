@@ -71,6 +71,8 @@
 #define LIGHT_DATA_WIDTH 72
 #define LIGHT_DATA_HEIGHT 8
 #define LIGHT_DATA_COLOR ((0x00 & 0xF8) << 8) | ((0xFF & 0xFC) << 3) | (0x00 >> 3)
+//Maximum lux value that will be accepted as valid (sometimes the sensor will return erroneous values)
+#define LIGHT_THRESHOLD 10000
 
 // Log messages at the bottom
 #define LOG_MESSAGE_COLOR ((0xFF & 0xF8) << 8) | ((0x00 & 0xFC) << 3) | (0x00 >> 3)

@@ -65,7 +65,7 @@ void setup(){
 
   logStatusMessage("MQTT connect...");
 
-  #ifdef MQTT_USE_SSL   // Uncomment below for MQTT/SSL
+  #ifdef MQTT_USE_SSL
   wifiClient.setCACert(server_crt_str);       
   wifiClient.setCertificate(client_crt_str);  
   wifiClient.setPrivateKey(client_key_str);   
@@ -85,7 +85,7 @@ void setup(){
   drawTestBitmap();
 
   displayTicker.attach_ms(30, displayUpdater);
-
+  
   buzzer_tone(1000, 300);
 }
 
@@ -133,12 +133,10 @@ void loop() {
     displaySensorData();
   }
 
-  float tslData = tslGetLux();
-  displayLightData(tslData);
-
   heartBeat = !heartBeat;
   drawHeartBeat();
-
+  lightUpdate();
+  
   delay(500);
 }
 
@@ -152,6 +150,13 @@ void displayUpdater() {
   if (epoch != prevEpoch) {
     displayClock();
     prevEpoch = epoch;
+  }
+}
+
+void lightUpdate() {
+  float tslData = tslGetLux();
+  if ((tslData >=0 ) && (tslData <= LIGHT_THRESHOLD)) {
+    displayLightData(tslData);
   }
 }
 
