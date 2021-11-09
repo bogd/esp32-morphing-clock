@@ -66,9 +66,9 @@ void setup(){
   logStatusMessage("MQTT connect...");
 
   #ifdef MQTT_USE_SSL   // Uncomment below for MQTT/SSL
-  // wifiClient.setCACert(server_crt_str);       
-  // wifiClient.setCertificate(client_crt_str);  
-  // wifiClient.setPrivateKey(client_key_str);   
+  wifiClient.setCACert(server_crt_str);       
+  wifiClient.setCertificate(client_crt_str);  
+  wifiClient.setPrivateKey(client_key_str);   
   #endif
 
   client.setServer( MQTT_SERVER, MQTT_PORT );

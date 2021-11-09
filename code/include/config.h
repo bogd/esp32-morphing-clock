@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define MQTT_USE_SSL 0
+//#define MQTT_USE_SSL 1
 //#define USE_ANDROID_AP 1
 
 // How often we refresh the time from the NTP server
