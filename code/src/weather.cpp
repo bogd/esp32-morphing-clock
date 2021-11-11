@@ -304,7 +304,8 @@ void getAccuWeatherData() {
 
   doc.shrinkToFit();
 
-  serializeJsonPretty(doc, Serial);
+  //Just in case we need to debug...
+  //serializeJsonPretty(doc, Serial);
 
   //Populate the variables: 
   minTempToday = round( double(doc["DailyForecasts"][0]["Temperature"]["Minimum"]["Value"]) );
@@ -318,6 +319,8 @@ void getAccuWeatherData() {
   }
 }
 
+/* Start of code to get data from openweathermap - based on work by https://github.com/lefty01 
+*/
 void getOpenWeatherData() { /*
   // sanity check units ...
   // strcmp(units, "standard") ... "metric", or "imperial"
