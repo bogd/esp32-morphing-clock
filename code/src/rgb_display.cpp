@@ -119,6 +119,10 @@ void displayLightData(float luxValue) {
 
 }
 
+void displayForecastData() {
+
+}
+
 // Simple R/G/B screen fill, for testing displays
 void displayTest(int delayMs) {
   dma_display->fillRect(0, 0, MATRIX_WIDTH, MATRIX_HEIGHT, dma_display->color565(255, 0, 0));

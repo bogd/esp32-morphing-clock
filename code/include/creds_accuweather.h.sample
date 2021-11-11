@@ -1,0 +1,7 @@
+#ifndef CREDS_ACCUWEATHER_H
+#define CREDS_ACCUWEATHER_H
+
+#define ACCUWEATHER_API_KEY "abcde"
+#define ACCUWEATHER_CITY_CODE "12345"
+
+#endif

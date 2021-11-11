@@ -18,8 +18,10 @@ unsigned long lastStatusSend = 0;
 
 //Time of last client.loop()
 unsigned long lastLoop = 0;
-//Time of last sensor data receive
+//Time of last weather sensor data receive
 unsigned long lastSensorRead = 0;
+//Time of last light sensor read
+unsigned long lastLightRead = 0;
 
 
 // NTP

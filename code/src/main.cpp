@@ -16,6 +16,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include <Ticker.h>
+#include <esp_task_wdt.h>
 
 #include "main.h"
 #include "common.h"
@@ -29,6 +30,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 Ticker displayTicker;
 unsigned long prevEpoch;
 unsigned long lastNTPUpdate;
+unsigned long lastWeatherUpdate;
 
 //Just a blinking heart to show the main thread is still alive...
 bool blinkOn;
@@ -45,7 +47,7 @@ void setup(){
   buzzer_init();
   buzzer_tone(500, 300);
   displayTest(300);
-
+  
   logStatusMessage("Connecting to WiFi...");
   Serial.print("Connecting to ");
   Serial.println(WIFI_SSID);
@@ -62,6 +64,11 @@ void setup(){
   configTime(TIMEZONE_DELTA_SEC, TIMEZONE_DST_SEC, "ro.pool.ntp.org");
   lastNTPUpdate = millis();
   logStatusMessage("NTP done!");
+
+  logStatusMessage("Getting weather...");
+  getAccuWeatherData();
+  lastWeatherUpdate = millis();
+  logStatusMessage("Weather recvd!");
 
   logStatusMessage("MQTT connect...");
 
@@ -81,9 +88,15 @@ void setup(){
   tslConfigureSensor();
   logStatusMessage("TSL done!");
 
+  logStatusMessage("Setting up watchdog...");
+  esp_task_wdt_init(WDT_TIMEOUT, true);
+  esp_task_wdt_add(NULL);
+  logStatusMessage("Woof!");
+
   //logStatusMessage(WiFi.localIP().toString());
   drawTestBitmap();
-
+  displayWeatherData();
+  
   displayTicker.attach_ms(30, displayUpdater);
   
   buzzer_tone(1000, 300);
@@ -109,6 +122,14 @@ void loop() {
     lastNTPUpdate = millis();
   }
 
+  // Periodically refresh weather forecast
+  if (millis() - lastWeatherUpdate > 1000 * WEATHER_REFRESH_INTERVAL_SEC) {
+    logStatusMessage("Weather refresh");
+    getAccuWeatherData();
+    displayWeatherData();
+    lastWeatherUpdate = millis();
+  }
+
   if (digitalRead(BUTTON1_PIN) == LOW) {
     logStatusMessage("Yess... push it again!!");
   }
@@ -125,18 +146,25 @@ void loop() {
   if (newSensorData) {
     //logStatusMessage("Sensor data in");
     displaySensorData();
+    displayTodaysWeather();
   }
 
   // Is the sensor data too old?
   if (millis() - lastSensorRead > 1000*SENSOR_DEAD_INTERVAL_SEC) {
     sensorDead = true;
     displaySensorData();
+    displayTodaysWeather();
   }
 
   heartBeat = !heartBeat;
   drawHeartBeat();
-  lightUpdate();
-  
+  if (millis() - lastLightRead > 1000*LIGHT_READ_INTERVAL_SEC) {
+    lightUpdate();
+    //displayTodaysWeather();
+  } 
+
+  //Reset the watchdog timer as long as the main task is running
+  esp_task_wdt_reset();
   delay(500);
 }
 
@@ -155,6 +183,7 @@ void displayUpdater() {
 
 void lightUpdate() {
   float tslData = tslGetLux();
+  lastLightRead = millis();
   if ((tslData >=0 ) && (tslData <= LIGHT_THRESHOLD)) {
     displayLightData(tslData);
   }
