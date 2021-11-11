@@ -10,11 +10,11 @@ So far, it does the following:
 * Updates the time on startup and periodically, via NTP
 * Displays the current outdoor temperature and humidity (received via MQTT - if you want to use this, you will need an MQTT server and a separate temperature sensor publishing to it!)
 * Displays the current light levels, read via a TSL2591 I2C light sensor
+* Displays the weather forecast for current day (including min/max temperatures), and for the next 4 days
 * Can receive OTA updates, triggered via an MQTT message (of course, this also requires an MQTT server :) )
 
 This is very much a work in progress, and it is far from being finished. Things that are planned for the future include:
-* Using the current light levels to control the matrix brightness
-* Displaying the weather forecast (min/max temperature, weather icons) pulled from Accuweather (or another weather service). The icons are already in place, I just need to pull and parse the JSON...
+* Use the current light levels to control the matrix brightness
 * Display alerts on-screen (received via MQTT)
 * Use the buzzer module to get the user's attention when an alert comes in
 
@@ -27,7 +27,9 @@ You can find the "components" for the project here:
 
 ### Version 0.2
 * Added MQTT SSL support (thanks to [Andreas](https://github.com/lefty01)). Disabled by default, since I do not use it when testing
-
+* Implemented weather forecast - clock now displays min/max temperature for today, today's + next 4 days' forecast icons
+* Decreased light sensor read interval (interval is now configurable from config.h)
+* Added a watchdog timer to automatically reset the unit (sometimes the main thread seems to hang, possibly due to the light sensor read?)
 
 ## Thanks
 
@@ -44,4 +46,4 @@ I also have to mention here [Brian Lough's work](https://www.tindie.com/products
 
 ## License
 
-The ESP32 HUB75 Matrix Morphing Clock is (c) Bogdan Sass, licensed with GNU General Public License Version 3.0 (which means, if you use it in a product somewhere, you need to make the source and all your modifications available to the receiver of such product so that they have the freedom to adapt and improve).
+The ESP32 HUB75 Matrix Morphing Clock is (c) [Bogdan Sass](https://github.com/bogd), licensed with GNU General Public License Version 3.0 (which means, if you use it in a product somewhere, you need to make the source and all your modifications available to the receiver of such product so that they have the freedom to adapt and improve).
